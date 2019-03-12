@@ -22,6 +22,10 @@
             button {background-color:yellow; border-radius: 3px; font-size: 125%;
             }
             code {font-size: 125%; color: forestgreen}
+            pre{
+                margin: 10 auto;
+                width: 90%;
+            } 
         </style>
         <script src="https://league-central.github.io/curriculum/script/headerAndFooter.js"></script>
 </head>
@@ -75,11 +79,18 @@ window.onload = function(){
 }
 
 function buildQuiz(){
+    
+const A = 0;
+const B = 1;
+const C = 2;
+const D = 3;
+const E = 4;  
+    
 
 questions[qIndex] = new Question();
 questions[qIndex].number=qIndex+1;
 questions[qIndex].type="SING_ANS";
-questions[qIndex].question="Consider the following segment of code. For the method call <code>t(5)</code>, how many calls to method <code>t</code> will be made, including the original call?<br><br><code>public int t(int n)<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;if (n == 1 || n == 2)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 2 * n;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;else<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return t(n - 1) - t(n - 2);<br>}<br></code>";
+questions[qIndex].question="Consider the following segment of code. For the method call <code>t(5)</code>, how many calls to method <code>t</code> will be made, including the original call?<br><br><pre>public int t(int n)<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;if (n == 1 || n == 2)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 2 * n;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;else<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return t(n - 1) - t(n - 2);<br>}<br></pre>";
 
 questions[qIndex].choices[0]="&nbsp;&nbsp;&nbsp;4";
 questions[qIndex].choices[1]="&nbsp;&nbsp;&nbsp;15";
@@ -87,13 +98,13 @@ questions[qIndex].choices[2]="&nbsp;&nbsp;&nbsp;9";
 questions[qIndex].choices[3]="&nbsp;&nbsp;&nbsp;14";
 questions[qIndex].choices[4]="&nbsp;&nbsp;&nbsp;5";
 
-    questions[qIndex].correctAnswers=2;
+    questions[qIndex].correctAnswers=C;
 
 qIndex=qIndex+1;
 questions[qIndex] = new Question();
 questions[qIndex].number=qIndex+1;
 questions[qIndex].type="SING_ANS";
-questions[qIndex].question="Consider the following class declarations. Which of the following code can be executed in the Swan class?<br><br><code>public class Bird<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;private String color;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;public Bird(String theColor)<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/* implementation not shown */<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;&nbsp;&nbsp;public void makeNoise()<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/* implementation not shown */<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;&nbsp;&nbsp;public void eat()<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/* implementation not shown */<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;&nbsp;&nbsp;public string showFeathers()<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return color;<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>}<br><br>public class Swan extends Bird<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;/* no constructors or other methods have been declared */<br>}</code><br><br><br>I.&nbsp;&nbsp;&nbsp; <code>this.color = &quot;blue&quot;;</code><br><br>II.&nbsp;&nbsp;&nbsp;<code> eat();</code><br><br>III.&nbsp;&nbsp;&nbsp;<code> Swan s = new Swan(&quot;blue&quot;);</code><br>";
+questions[qIndex].question="Consider the following class declarations. Which of the following code can be executed in the Swan class?<br><br><pre>public class Bird<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;private String color;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;public Bird(String theColor)<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/* implementation not shown */<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;&nbsp;&nbsp;public void makeNoise()<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/* implementation not shown */<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;&nbsp;&nbsp;public void eat()<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/* implementation not shown */<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;&nbsp;&nbsp;public string showFeathers()<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return color;<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>}<br><br>public class Swan extends Bird<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;/* no constructors or other methods have been declared */<br>}</pre><br><br><br>I.&nbsp;&nbsp;&nbsp; <code>this.color = &quot;blue&quot;;</code><br><br>II.&nbsp;&nbsp;&nbsp;<code> eat();</code><br><br>III.&nbsp;&nbsp;&nbsp;<code> Swan s = new Swan(&quot;blue&quot;);</code><br>";
 
 
 questions[qIndex].choices[0]="&nbsp;&nbsp;&nbsp;I only";
@@ -102,13 +113,13 @@ questions[qIndex].choices[2]="&nbsp;&nbsp;&nbsp;III only";
 questions[qIndex].choices[3]="&nbsp;&nbsp;&nbsp;I an II only";
 questions[qIndex].choices[4]="&nbsp;&nbsp;&nbsp;I, II, and III";
 
-    questions[qIndex].correctAnswers=1;
+    questions[qIndex].correctAnswers=B;
 
-qIndex=qIndex+1;
+qIndex=qIndex+B;
 questions[qIndex] = new Question();
 questions[qIndex].number=qIndex+1;
 questions[qIndex].type="SING_ANS";
-questions[qIndex].question="Consider the following code. Assume that <code>list</code> is an ArrayList of integers that contains [7, 3, 2]. What will the contents of <code>list</code> be after the following code is executed?<br><br>&nbsp;&nbsp;&nbsp; <code>list.add(4)</code>;<br>&nbsp;&nbsp;&nbsp; <code>list.add(1, 8);</code><br>&nbsp;&nbsp;&nbsp; <code>list.remove(2);</code><br>&nbsp;&nbsp;&nbsp; <code>list.set(2, 1);</code><br>&nbsp;&nbsp;&nbsp; <code>list.add(3);</code><br>";
+questions[qIndex].question="Consider the following code. Assume that <code>list</code> is an ArrayList of integers that contains [7, 3, 2]. What will the contents of <code>list</code> be after the following code is executed?<br><br><pre>&nbsp;&nbsp;&nbsp; list.add(4);<br>&nbsp;&nbsp;&nbsp; list.add(1, 8);<br>&nbsp;&nbsp;&nbsp; list.remove(2);<br>&nbsp;&nbsp;&nbsp; list.set(2, 1);<br>&nbsp;&nbsp;&nbsp; list.add(3);</pre><br>";
 
 questions[qIndex].choices[0]="&nbsp;&nbsp;&nbsp;[7, 1, 4, 8, 3]";
 questions[qIndex].choices[1]="&nbsp;&nbsp;&nbsp;[7, 8, 1, 2, 4, 3]";
@@ -116,13 +127,13 @@ questions[qIndex].choices[2]="&nbsp;&nbsp;&nbsp;[7, 3, 1, 4, 3]";
 questions[qIndex].choices[3]="&nbsp;&nbsp;&nbsp;[8, 1, 2, 4, 3]";
 questions[qIndex].choices[4]="&nbsp;&nbsp;&nbsp;[7, 8, 1, 4, 3]";
 
-questions[qIndex].correctAnswers=4;
+questions[qIndex].correctAnswers=E;
 
 qIndex=qIndex+1;
 questions[qIndex] = new Question();
 questions[qIndex].number=qIndex+1;
 questions[qIndex].type="SING_ANS";
-questions[qIndex].question="The method <code>rowSums</code> returns an array of integers. Each element of the array holds the sum of the corresponding row of a 2-D matrix. Which line correctly fills in /* to be determined */ in <code>rowSums</code>?<br><br><code>public int[] rowSums(int[][] arr)<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;int[] ans = new int[arr.length];<br><br>&nbsp;&nbsp;&nbsp;&nbsp;for (int i = 0; i < arr.length; i++)<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (int j = 0; j < arr[0].length; j++)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/* to be determined */<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;&nbsp;&nbsp;return ans;<br>}</code>";
+questions[qIndex].question="The method <code>rowSums</code> returns an array of integers. Each element of the array holds the sum of the corresponding row of a 2-D matrix. Which line correctly fills in /* to be determined */ in <code>rowSums</code>?<br><br><pre>public int[] rowSums(int[][] arr)<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;int[] ans = new int[arr.length];<br><br>&nbsp;&nbsp;&nbsp;&nbsp;for (int i = 0; i < arr.length; i++)<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (int j = 0; j < arr[0].length; j++)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/* to be determined */<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;&nbsp;&nbsp;return ans;<br>}</pre><br>";
 
 questions[qIndex].choices[0]="&nbsp;&nbsp;&nbsp;<code>arr[i][j] = ans[i];</code>";
 questions[qIndex].choices[1]="&nbsp;&nbsp;&nbsp;<code>ans[i] += arr[i][j];</code>";
@@ -130,13 +141,13 @@ questions[qIndex].choices[2]="&nbsp;&nbsp;&nbsp;<code>ans[i][j] += arr[i][j];</c
 questions[qIndex].choices[3]="&nbsp;&nbsp;&nbsp;<code>ans[i] = arr[i][j];</code>";
 questions[qIndex].choices[4]="&nbsp;&nbsp;&nbsp;<code>arr[i][j] += ans[i];</code>";
 
-questions[qIndex].correctAnswers=1;
+questions[qIndex].correctAnswers=B;
 
 qIndex=qIndex+1;
 questions[qIndex] = new Question();
 questions[qIndex].number=qIndex+1;
 questions[qIndex].type="SING_ANS";
-questions[qIndex].question="Consider the following method <code>binSearch</code>, which uses binary search to locate an element key in an array of integers <code>arr</code>. If list is an array of integers containing {4, 7, 9, 11, 20, 24, 30, 41}, how many iterations of the while loop occur in <code>binSearch(30, list)</code>?<br><br><code>public static int binSearch(int key, int[] arr)<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;int low = 0;<br>&nbsp;&nbsp;&nbsp;&nbsp;int high = arr.length - 1;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;while (low &lt;= high)<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int mid = (low + high) / 2;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (arr[mid] == key)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return mid;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else if (arr[mid] &lt; key)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;low = mid + 1;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;high = mid - 1;<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>   return -1;<br>}</code>";
+questions[qIndex].question="Consider the following method <code>binSearch</code>, which uses binary search to locate an element key in an array of integers <code>arr</code>. If list is an array of integers containing {4, 7, 9, 11, 20, 24, 30, 41}, how many iterations of the while loop occur in <code>binSearch(30, list)</code>?<br><br><pre>public static int binSearch(int key, int[] arr)<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;int low = 0;<br>&nbsp;&nbsp;&nbsp;&nbsp;int high = arr.length - 1;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;while (low &lt;= high)<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int mid = (low + high) / 2;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (arr[mid] == key)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return mid;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else if (arr[mid] &lt; key)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;low = mid + 1;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;high = mid - 1;<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>   return -1;<br>}</pre>";
 
 questions[qIndex].choices[0]="&nbsp;&nbsp;&nbsp;1";
 questions[qIndex].choices[1]="&nbsp;&nbsp;&nbsp;2";
@@ -144,7 +155,7 @@ questions[qIndex].choices[2]="&nbsp;&nbsp;&nbsp;3";
 questions[qIndex].choices[3]="&nbsp;&nbsp;&nbsp;4";
 questions[qIndex].choices[4]="&nbsp;&nbsp;&nbsp;5";
 
-questions[qIndex].correctAnswers=2;
+questions[qIndex].correctAnswers=C;
 
     
 	totalQuestions = qIndex+1;
